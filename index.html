@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>TESTE LOCALSTORAGE</title>
+	<style>
+		
+		input{
+				font-family: sans-serif;
+			font-size: 40px;
+			border: solid 2px;
+			border-color: white;
+			background-color: skyblue;
+			color: paleturquoise;
+			display: inline;
+			margin-right: 15px;
+			margin-block: 15px;
+		}
+		body{
+			background-color: lightpink ;
+			background-image: url('galaxy.AVIF');
+			background-size: cover;
+		}
+
+	</style>
+	<script>
+		let contadorChave = 0;
+		let nome;
+
+		function exibirVariavel(){
+		    nome = document.getElementById('nome').value
+			alert(nome)
+		}
+		function salvarLocalmente(){
+			 nome = document.getElementById('nome').value
+			localStorage.setItem(contadorChave, nome)
+			contadorChave = contadorChave + 1
+		}
+		function listarLocal(){
+		   pesquisaChave = document.getElementById('chave').value
+		   alert(localStorage.getItem(pesquisaChave))
+		}
+
+
+	</script>
+</head>
+<body>
+	<input type="text" id="nome" placeholder="insira um nome aqui">
+	<input type="text" id="chave" placeholder="insira a chave que deseja pesquisar">
+	<input type="button" value="CLIQUE AQUI" onclick="exibirVariavel()">
+	<input type="button" value="SALVAR NO LOCALSTORAGE" onclick="salvarLocalmente()">
+	<input type="button" value="LISTAR" onclick="listarLocal()">
+</body>
+</html>
